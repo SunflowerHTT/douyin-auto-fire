@@ -43,6 +43,7 @@ class DouyinChat:
         search = await first_visible(self.page, SEARCH_INPUTS, self.timeout_ms)
         await search.click()
         await search.fill("")
+        await asyncio.sleep(1)
         await search.fill(name)
         await self.page.wait_for_timeout(1_500)
 
